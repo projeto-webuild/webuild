@@ -1,0 +1,40 @@
+.bg-gradiente {
+    background-image: linear-gradient(50deg, #d25400 20%, #F9D423 100%, #d25400 20%)!important;
+}
+
+.bg-menu {
+    background-color: #E8E8E8;
+}
+
+.input-form {
+    border: none;
+    border-left: 5px solid #d25400 !important;
+}
+
+label {
+    color: #d25400 !important;
+}
+
+.input-form:active {
+    outline: 2px solid #d25400 !important;
+}
+
+.input-form:focus {
+    box-shadow: 0 0 5px #d25400 !important;
+    border-radius: 5px;
+}
+
+
+/*cor Place holder*/
+
+input::-webkit-input-placeholder {
+    color: #d25400 !important;
+}
+
+input:-moz-placeholder {
+    color: #d25400 !important;
+}
+
+input {
+    outline: none;
+}
