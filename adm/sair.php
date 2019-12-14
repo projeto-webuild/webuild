@@ -6,4 +6,4 @@ if (!isset($_SESSION['nome'])) {
 }
 
 unset($_SESSION['nome']);
-header('Location: index.php');
+header('location: index.php');
