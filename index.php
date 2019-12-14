@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+
     <title>Document</title>
 </head>
 
@@ -20,10 +22,13 @@
 
     <!--rodape-->
     <footer>
-        <?php require_once("rodape.php"); ?>
+
 
     </footer>
-
+    <script src="node_modules/jquery/dist/jquery.js">
+    </script>
+    <script src="node_modules/popper.js/dist/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 </body>
 

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['nome'])) {
+    header('Location: index.php');
+} else {
+    $nome_usuario = $_SESSION['nome'];
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Painel administrativo</title>
 </head>
 
@@ -16,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-menu">
         <div class="container ">
             <a class="navbar-brand" href="painel.php">
-                <img src="img/logo_webuild.png" class="" width="150" alt="">
+                <img src="../img/logo_webuild.png" class="" width="150" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                 <span class="navbar-toggler-icon"></span>
@@ -48,11 +56,11 @@
                 <div class=" d-flex justify-content-end  w-100">
                     <ul class="navbar-nav mr-3">
                         <li class="nav-item ">
-                            <p class="pr-2"> <?php echo $nome_usuario; ?></p>
+                            <p class="pr-2"> Óla <?php echo $nome_usuario; ?></p>
                         <li class="nav-item ">
                             <a class="btn-sm text-white px-4 py-2 mx-sm-2 rounded-pill bg-gradiente " href="sair.php">
-                                entrar
 
+                                sair
                             </a>
                         </li>
                     </ul>
