@@ -80,12 +80,14 @@ if (!isset($_SESSION['nome'])) { } else {
 
                     <ul class="navbar-nav ">
                         <li class="nav-item dropdown  ">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <?php if ($nome_usuario) {
 
-                                <?php if ($nome_usuario) {
-                                    echo $nome_usuario;
+                            echo"<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
+                                   echo "Bem vindo ".$nome_usuario;
                                 } else {
-                                    echo "Visitante";
+                                    echo "<a class='btn-sm text-white px-4 py-2 mx-sm-2 rounded-pill btn-orange' href='cadastrar.php'>
+                                    Cadastrar-se</a>";
+
                                 }
                                 ?>
 

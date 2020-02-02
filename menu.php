@@ -70,7 +70,7 @@
         if (isset($r['img'])) {
             echo "";
             echo "<div class='img-resultado rounded-circle'>";
-            echo "<img width='200' src='img/userid" . $id_usuario . "/" . $img . "' alt=''>";
+            echo "<img width='150' src='img/userid" . $id_usuario . "/" . $img . "' alt=''>";
             echo "</div>";
         } else {
             echo "<img width='150' src='img/solid/user-circle.svg' alt=''>";
