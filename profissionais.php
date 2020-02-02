@@ -1,5 +1,6 @@
 <?php
 session_start();
+ Error_reporting (0);
 require_once('conexao.php');
 //conexao
 $con = new Conexao();

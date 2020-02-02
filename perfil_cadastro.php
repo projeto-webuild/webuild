@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('conexao.php');
+ Error_reporting (0);
 if (isset($_SESSION['user_key'])) {
     $user = $_SESSION['user_key'];
     $nome_usuario = $_SESSION['nome'];
@@ -81,7 +82,7 @@ if ($res = mysqli_query($link, $sql)) {
                 <span class="borda"></span>
 
                 <!--Formulario cadastro-->
-                <form method="POST" action="update_registro.php" class="p-4">
+                <form method="POST" action="update_registro.php" class="p-4" autocomplete="off" >
 
                     <div class="form-row ">
                         <div class="form-group col-md-6">

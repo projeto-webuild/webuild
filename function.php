@@ -1,5 +1,6 @@
 <?php
 require_once('conexao.php');
+ Error_reporting (0);
 
 $email = isset($_POST['email']) ? $_POST['email'] : "";
 $usuario = isset($_POST['username']) ? $_POST['username'] : "";

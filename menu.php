@@ -70,7 +70,7 @@
         if (isset($r['img'])) {
             echo "";
             echo "<div class='img-resultado rounded-circle'>";
-            echo "<img width='200' src='img/userid" . $id_usuario . "/" . $img . "' alt=''>";
+            echo "<img width='150' src='img/userid" . $id_usuario . "/" . $img . "' alt=''>";
             echo "</div>";
         } else {
             echo "<img width='150' src='img/solid/user-circle.svg' alt=''>";
@@ -79,7 +79,7 @@
         ?>
 
     </div>
-    <button class="btn-sm text-white px-4 py-2 m-3 rounded-pill btn-orange " data-toggle="modal" data-target="#upload-file"> file </button>
+    <button class="btn-sm w-50 text-white px-4 py-2 mx-auto my-2 rounded-pill btn-orange " data-toggle="modal" data-target="#upload-file"> file </button>
 
 </div>
 <div class="border shadow">

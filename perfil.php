@@ -1,4 +1,5 @@
 <?php
+ Error_reporting (0);
 if (isset($_GET['id'])) {
     $id_usuario =  filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 

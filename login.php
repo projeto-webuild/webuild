@@ -3,6 +3,7 @@ session_start();
 $erro_msg_campos_vazio = isset($_SESSION['erro_preencha_campos']) ? $_SESSION['erro_preencha_campos'] : "";
 $erro_msg_user_no_exist = isset($_SESSION['erro_usuario_no_exist']) ? $_SESSION['erro_usuario_no_exist'] : "";
 $erro_msg_precisa_login = isset($_SESSION['erro_msg_precisa_login']) ? $_SESSION['erro_msg_precisa_login'] : "";
+ Error_reporting (0);
 ?>
 
 <head>
