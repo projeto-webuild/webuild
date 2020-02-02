@@ -4,7 +4,7 @@ $erro_msg_campos_vazio = isset($_SESSION['erro_preencha_campos']) ? $_SESSION['e
 $erro_msg_user_no_exist = isset($_SESSION['erro_usuario_no_exist']) ? $_SESSION['erro_usuario_no_exist'] : "";
 $token  = hash('sha512', rand(100, 1000));
 $_SESSION['token'] = $token;
-
+ Error_reporting (0);
 ?>
 
 <html lang="pt-br">

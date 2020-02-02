@@ -1,5 +1,6 @@
 <?php
 session_start();
+ Error_reporting (0);
 require_once('conexao.php');
 if (!isset($_SESSION['nome'])) {
     header('Location: index.php');

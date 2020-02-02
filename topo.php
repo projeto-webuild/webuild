@@ -3,7 +3,9 @@ session_start();
 if (!isset($_SESSION['nome'])) { } else {
     $nome_usuario = $_SESSION['nome'];
     $id_usuario = $_SESSION['id_usuario'];
+
 }
+ Error_reporting (0);
 ?>
 
 
@@ -47,7 +49,7 @@ if (!isset($_SESSION['nome'])) { } else {
                             Menu
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="categorias.php"> Categorias
+                            <a class="dropdown-item" href="#"> Categorias
                             </a>
                             <a class="dropdown-item" href="#"> Profissões </a>
                             <div class="dropdown-divider">
@@ -98,9 +100,10 @@ if (!isset($_SESSION['nome'])) { } else {
 
                                 <?php if ($nome_usuario) { ?>
                                     <a class="dropdown-item" href="perfil_cadastro.php"> Minha conta </a>
-                                    <a class="dropdown-item" href="endereco"> Perfil </a>
-                                    <a class="dropdown-item" href="#"> Endereços </a>
-                                    <a class="dropdown-item" href="#"> Serviços </a>
+                                    <a class="dropdown-item" href="perfil_cadastro.php"> Perfil </a>
+                                    
+                                    <!--<a class="dropdown-item" href="enderecos.php"> Endereços </a>
+                                    <a class="dropdown-item" href="#"> Serviços </a>-->
 
 
 

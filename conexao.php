@@ -4,7 +4,7 @@ class Conexao
 {
     private $host = 'localhost';
     private $user = 'root';
-    private $password = '1234';
+    private $password = '';
     private $database = 'id11855241_db_webuild';
 
     public function conecta()

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('conexao.php');
+ Error_reporting (0);
 if (isset($_SESSION['user_key'])) {
     $user = $_SESSION['user_key'];
     $nome_usuario = $_SESSION['nome'];
