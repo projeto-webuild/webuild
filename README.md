@@ -1,2 +1,2 @@
 # projeto WEBUILD
-Plataforma web de busca de profissionais 
+Um site de busca de profissionais 
