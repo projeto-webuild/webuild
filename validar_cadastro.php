@@ -1,14 +1,10 @@
 <?php
 /*
-    Author: "helenilson Correa de oliveira"
-    Data: 08/12/2019
-    Projeto: webuild
-    Contato: helenilsoon@gmail.com
+*  Author: "helenilson Correa de oliveira"
+*   Data: 08/12/2019
+*   Projeto: webuild
+*   Descrição: Tela de cadastro de usuario
 */
-
-
-
-
 
 session_start();
 require_once('conexao.php');
@@ -48,8 +44,8 @@ if ($token == $token2) {
 
 
 
-            $sql = "SELECT * FROM usuario WHERE username = '$username' and email = '$email'";
-
+            $sql = "SELECT * FROM tb_usuario WHERE username = '$username' and email = '$email'";
+           
             $re = mysqli_query($link, $sql);
 
             if ($re) {
@@ -57,7 +53,7 @@ if ($token == $token2) {
                 if (!isset($result['email']) and !isset($result['username'])) {
                     echo "email não existe";
 
-                    $sql_iserir = "INSERT INTO usuario(nome,username,email,password) VALUES ('$nome','$username','$email','$senha')";
+                    $sql_iserir = "INSERT INTO tb_usuario(nome,username,email,password) VALUES ('$nome','$username','$email','$senha')";
 
 
                     $res = mysqli_query($link, $sql_iserir);

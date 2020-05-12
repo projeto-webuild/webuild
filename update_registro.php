@@ -44,10 +44,10 @@ if (isset($_SESSION['user_key'])) {
 
             if (mysqli_query($link, $sql_perfil)) {
 
-                header('location: perfil_cadastro.php?sucess=&');
+                header('location: perfil_user.php?sucess=&');
             } else {
 
-                header('location: perfil_cadastro.php?erro=&');
+                header('location: perfil_user.php?erro=&');
             }
         } else {
             echo " voçê não tem permissão pra atualizar";
