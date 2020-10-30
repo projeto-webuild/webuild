@@ -13,6 +13,7 @@ $erro_msg_user_no_exist = isset($_SESSION['erro_usuario_no_exist']) ? $_SESSION[
 $erro_msg_precisa_login = isset($_SESSION['erro_msg_precisa_login']) ? $_SESSION['erro_msg_precisa_login'] : "";
 $token = hash('sha512', rand(100, 1000));
 $_SESSION['token'] = $token;
+
 Error_reporting(0);
 ?>
 

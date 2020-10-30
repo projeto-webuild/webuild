@@ -7,53 +7,12 @@
  *
  */
 
-// session_start();
-// $_SESSION['horario'] = time();
-// $_SESSION['visitante'] = md5(time());
-// $_SESSION['HTTP_USER_AGENT'] = $_SERVER['HTTP_USER_AGENT'];
-// echo '<br> Request ';
-// var_dump($_SESSION);
-// echo '<br/> ' . time();
-// echo '<br/> ';
-// $timezone = new DateTimeZone('America/Sao_Paulo');
-// $agora = new DateTime('now', $timezone);
 
-// $date = date('d-m-Y H:i:s ');
-// echo $date;
-// // echo $date->format('d-m-Y H:i:s ');
-
-// echo '<br> Request ';
-// var_dump($_REQUEST);
-// echo '<br> Server ';
-// var_dump($_SERVER);
-// echo '<br> Request ';
-// var_dump($_SESSION);
-
+$loadAllUser =  Usuario::getAllUser();
+echo json_encode($loadAllUser);
 ?>
 
 
-
-<!-- <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="icon/css/fontawesome.css" rel="stylesheet">
-    <link href="icon/css/brands.css" rel="stylesheet">
-    <link href="icon/css/solid.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
-
-    <title>Welbuild | conectando pessoas para um bom serviços</title>
-
-
-</head>
-
-<body> -->
-<!--Menu da pagina-->
 <?php
 require_once "topo.php";
 ?>

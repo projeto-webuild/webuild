@@ -9,11 +9,15 @@
  */
 session_start();
 require_once('conexao.php');
+
 Error_reporting(0);
+
 if (isset($_SESSION['user_key'])) {
+
     $user = $_SESSION['user_key'];
     $nome_usuario = $_SESSION['nome'];
     $id_usuario = $_SESSION['id_usuario'];
+
 } else {
     header('Location: index.php');
 }
@@ -27,10 +31,13 @@ $link = $con->conecta();
 
 $sql = "SELECT * FROM tb_usuario where id_usuario =$id_usuario";
 
+
 if ($res = mysqli_query($link, $sql)) {
+
     $resp = mysqli_fetch_assoc($res);
+
     $sobrenome = $resp['sobrenome'];
-    $data_nascimento = $resp['data_nascimento'];
+    $data_nascimento = implode("/",array_reverse(explode("-",$resp['data_nascimento'])));
     $username = $resp['username'];
     $email = $resp['email'];
     $telefone = $resp['telefone'];
@@ -68,13 +75,16 @@ if ($res = mysqli_query($link, $sql)) {
 </head>
 
 <body>
+
     <?php require_once('topo.php'); ?>
+
     <div class="container">
         <div class="row mt-4  ">
             <div class="col-md-4 d-flex flex-column ">
                 <!--MENU-->
 
                 <?php require_once('menu.php') ?>
+                
                 <!--FIM MENU-->
             </div>
             <div class="col-md-8 shadow ">
@@ -83,7 +93,7 @@ if ($res = mysqli_query($link, $sql)) {
                 <?php if (isset($_GET['sucess'])) {
                     echo "<div class='alert alert-success' role='alert'>Atualizado Com sucesso!</div>";
                 }
-                if (isset($_GET['error'])) {
+                if (isset($_GET['erro'])) {
                     echo "<div class='alert alert-danger' role='alert'>Erro ao atualizar!</div>";
                 } ?>
 
@@ -114,8 +124,8 @@ if ($res = mysqli_query($link, $sql)) {
                         <div class="form-group col-md-6">
                             <label for="data_nascimento">Data nascimento</label>
                             <input type="text" readonly class="input-form form-control " id="data_nascimento"
-                                name="data_nascimento" value=" <?= $data_nascimento ?>" placeholder=" Ano-mês-dia">
-                            <small id="emailHelp" class="form-text text-muted">Fomato da data ex:1991-12-05 .</small>
+                                name="data_nascimento" value="<?= $data_nascimento ?>" placeholder=" 01/04/2000">
+                            <small id="emailHelp" class="form-text text-muted">Fomato da data ex:dia/mês/ano .</small>
                         </div>
                     </div>
                     <div class="form-row ">

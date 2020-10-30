@@ -10,7 +10,7 @@ session_start();
 require_once('conexao.php');
 
 $token = isset($_SESSION['token']) ? $_SESSION['token'] : "";
-$token2 = isset($_REQUEST['token']) ? $_REQUEST['token'] : "";
+$token2 = isset($_POST['token']) ? $_POST['token'] : "";
 
 if ($token == $token2) {
 
@@ -36,11 +36,8 @@ if ($token == $token2) {
 
             $con = new Conexao();
             $link = $con->conecta();
-            // limpado a string e colocando uma conta barra
-            $nome =  mysqli_real_escape_string($link, $email);
-            $username =  mysqli_real_escape_string($link, $email);
-            $email =  mysqli_real_escape_string($link, $email);
-            $senha = mysqli_real_escape_string($link, $senha);
+            
+            
 
 
 
@@ -49,18 +46,21 @@ if ($token == $token2) {
             $re = mysqli_query($link, $sql);
 
             if ($re) {
+
                 $result = mysqli_fetch_assoc($re);
+
                 if (!isset($result['email']) and !isset($result['username'])) {
                     echo "email não existe";
 
                     $sql_iserir = "INSERT INTO tb_usuario(nome,username,email,password) VALUES ('$nome','$username','$email','$senha')";
 
+    
 
                     $res = mysqli_query($link, $sql_iserir);
 
 
-                    if (mysqli_affected_rows($link)) {
-                        $resposta = mysqli_query($link, $sql);
+                    if ($usuario = mysqli_affected_rows($link)) {
+                                               $resposta = mysqli_query($link, $sql);
                         $dados = mysqli_fetch_assoc($resposta);
 
                         $_SESSION['nome'] = $dados['nome'];
@@ -81,8 +81,9 @@ if ($token == $token2) {
                         }
                         //armazenando na sessão
                         $_SESSION['user_key'] = $key;
+                    
                         //redirecionando para o perfil
-                        header('Location: perfil_cadastro.php?key=$key');
+                        header('Location: perfil_user.php?key='.$key);
                     } else {
                         echo "Erro ao cadastrar entre em contato com o administrador";
                     }
